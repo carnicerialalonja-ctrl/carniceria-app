@@ -21,7 +21,7 @@ type DatosCliente = {
   comentarios: string;
 };
 
-const WHATSAPP = "524610000000"; // CAMBIA ESTE NÚMERO por tu WhatsApp con clave de país.
+const WHATSAPP = "524613499246"; // CAMBIA ESTE NÚMERO por tu WhatsApp con clave de país.
 
 const productos: Producto[] = [
   {
