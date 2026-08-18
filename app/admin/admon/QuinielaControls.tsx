@@ -34,7 +34,7 @@ export default function QuinielaControls() {
       const payload = await response.json();
       if (!response.ok) throw new Error(payload.error || "No fue posible realizar la acción.");
       setRounds(payload.jornadas); setSelectedId(payload.jornadas[0]?.id || "");
-      setMessage("Buscando los nueve partidos en API-Football…");
+      setMessage("Buscando los nueve partidos en Liga MX…");
       window.setTimeout(() => void load().catch((error) => setMessage(error.message)), 4_000);
       window.setTimeout(() => void load().catch((error) => setMessage(error.message)), 9_000);
     } catch (error) { setMessage(error instanceof Error ? error.message : "Ocurrió un error."); }
@@ -53,7 +53,7 @@ export default function QuinielaControls() {
       </div>
       <div className={styles.automaticRules}><strong>Estados automáticos</strong><span>Se abre al quedar completa · se cierra al iniciar el primer partido · se finaliza al terminar todos.</span></div>
       <div className={styles.generateRound} style={{ gridTemplateColumns:"1fr auto" }}>
-        <div><strong>Generar la siguiente jornada automáticamente</strong><small>Descarga los nueve partidos, equipos, fechas y horarios publicados por API-Football.</small></div>
+        <div><strong>Generar la siguiente jornada automáticamente</strong><small>Descarga los nueve partidos, equipos, fechas y horarios publicados por Liga MX.</small></div>
         <button type="button" disabled={working} onClick={() => void generate()}>Agregar jornada nueva</button>
       </div>
     </div>
