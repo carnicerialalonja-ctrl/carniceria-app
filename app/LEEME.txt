@@ -1,0 +1,26 @@
+1. Copia las carpetas app y public dentro de:
+C:\Users\torh7\OneDrive\Documentos\PROYECTOS\carniceria-app
+
+2. Acepta reemplazar los archivos.
+
+3. Ejecuta:
+npm run dev
+
+4. Abre:
+http://localhost:3000
+
+5. Publica:
+npx vercel --prod
+
+NUEVO:
+- Quiniela La Lonja
+- La Lonja Music Station
+- Tarjeta de promociones próximamente
+
+PROMOCIONES AGREGADAS:
+- Bistec de cerdo: $160 → $120/kg
+- Molida al pastor: $140 → $100/kg
+- Chorizo a granel: $120 → $100/kg
+- Molida para tacos: $120 → $100/kg
+
+Los precios promocionales se aplican también al carrito y al mensaje de WhatsApp.

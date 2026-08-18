@@ -1,0 +1,772 @@
+[
+  {
+    "id": "RHAMSIR1",
+    "nombre": "HAMBURGUESAS DE SIRLOIN",
+    "categoria": "Res",
+    "precio": 80,
+    "unidad": "paquete",
+    "descripcion": "PAQUETE DE 4 HAMBURGUESAS DE SIRLOIN DE 80 GRAMOS CADA UNA",
+    "imagen": "/productos/hamburguesas-sirloin.jpeg",
+    "emoji": "🥩"
+  },
+  {
+    "id": "CCHOESP1",
+    "nombre": "CHORIZO ESPAÑOL",
+    "categoria": "Cerdo",
+    "precio": 120,
+    "unidad": "kg",
+    "descripcion": "CHORIZO ESPAÑOL DE CERDO, IDEAL PARA ASAR O PREPARAR EN GUISADOS",
+    "imagen": "/productos/chorizo-espanol.jpeg",
+    "emoji": "🐖"
+  },
+  {
+    "id": "PCB1",
+    "nombre": "BISTEC DE CERDO",
+    "categoria": "Cerdo",
+    "precio": 120,
+    "unidad": "kg",
+    "descripcion": "PIERNA DE CERDO BISTECEADA Y APLANADA PARA MILANESA O FREIR",
+    "imagen": "https://drive.google.com/thumbnail?id=1VprAGs8FfpuAYTrhIGlwbsXRyP64ouVy&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "PCF2",
+    "nombre": "PIERNA DE CERDO PA FREIR",
+    "categoria": "Cerdo",
+    "precio": 120,
+    "unidad": "kg",
+    "descripcion": "PIERNA DE CERDO EN TROCITOS PARA FREIR",
+    "imagen": "https://drive.google.com/thumbnail?id=1-ytRF_EKgllmB_Bysye_UC07TQOBZND6&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "PCAR3",
+    "nombre": "ARRACHERA MARINADA",
+    "categoria": "Cerdo",
+    "precio": 120,
+    "unidad": "kg",
+    "descripcion": "PIERNA DE CERDO BISTECEADA EN CORTE DELGADO Y MARINADA PARA ARRACHERA PARA ASAR",
+    "imagen": "https://drive.google.com/thumbnail?id=1bJrld-Q8bop79UkZaLYThqC47N8KkSZ5&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "PCPAS4",
+    "nombre": "BISTEC DE CERDO AL PASTOR",
+    "categoria": "Cerdo",
+    "precio": 120,
+    "unidad": "kg",
+    "descripcion": "PIERNA DE CERDO BISTECEADA EN CORTE DELGADO Y MARINADA AL PASTOR",
+    "imagen": "https://drive.google.com/thumbnail?id=1VZmZ7LLZVGP4JQguc-rWTFu7spQWbhPE&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "PCMO5",
+    "nombre": "MOLIDA",
+    "categoria": "Cerdo",
+    "precio": 120,
+    "unidad": "kg",
+    "descripcion": "PIERNA DE CERDO MOLIDA EN TAMAÑO DELGADO PARA HACER ALBONDIGAS",
+    "imagen": "https://drive.google.com/thumbnail?id=1ULFvmwji33lMrHQBLMgIEGxFIXoN4Xi-&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "PCMOPAS6",
+    "nombre": "MOLIDA AL PASTOR",
+    "categoria": "Cerdo",
+    "precio": 80,
+    "unidad": "kg",
+    "descripcion": "PIERNA DE CERDO MOLIDA EN CORTE GRUESO Y MARINADA AL PASTOR",
+    "imagen": "https://drive.google.com/thumbnail?id=1BC9_c4DacRdfH-06l5UCZX69-5JNZiRN&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CMA1",
+    "nombre": "MANITAS",
+    "categoria": "Cerdo",
+    "precio": 60,
+    "unidad": "kg",
+    "descripcion": "MANITAS DE CERDO (ESPECIFICAR SU CORTE EN 2 O 4 PZAS)",
+    "imagen": "https://drive.google.com/thumbnail?id=13l0jK9gzKIArPmemz6E8Be5hFWUzS1y2&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CCHD1",
+    "nombre": "CHICHARRON",
+    "categoria": "Cerdo",
+    "precio": 200,
+    "unidad": "kg",
+    "descripcion": "CHICHARRON DE CERDO DELGADO O RAYADO",
+    "imagen": "https://drive.google.com/thumbnail?id=1dGZLuA5vQ9VgK9mfR_49YlZkHYg0jR2c&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CCHC2",
+    "nombre": "CHICHARRON CON CARNE",
+    "categoria": "Cerdo",
+    "precio": 300,
+    "unidad": "kg",
+    "descripcion": "CHICHARRON DE CERDO CON CARNE",
+    "imagen": "https://drive.google.com/thumbnail?id=1dGZLuA5vQ9VgK9mfR_49YlZkHYg0jR2c&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CCHAH1",
+    "nombre": "CHULETA AHUMADA",
+    "categoria": "Cerdo",
+    "precio": 110,
+    "unidad": "kg",
+    "descripcion": "CHULETA AHUMADA DE CERDO",
+    "imagen": "https://drive.google.com/thumbnail?id=1kQsbeTE_vktWlHNN4oo4vMYa0PbFVEaU&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CCHN1",
+    "nombre": "CHULETA DE CERDO NATURAL",
+    "categoria": "Cerdo",
+    "precio": 120,
+    "unidad": "kg",
+    "descripcion": "CHULETA DE CERDO NATURAL REBANADA Y APLANADA",
+    "imagen": "https://drive.google.com/thumbnail?id=1vfs2S0uHGuWJbVDi4hC6Gh_e-R-McCnI&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CMIG1",
+    "nombre": "MIGAJAS PA GORDITAS",
+    "categoria": "Cerdo",
+    "precio": 120,
+    "unidad": "kg",
+    "descripcion": "MIGAJAS PA GORDITAS",
+    "imagen": "https://drive.google.com/thumbnail?id=1wvwgjCJBgA4z4uS0px6O3Bl-dMiCnCVH&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CCAR1",
+    "nombre": "CARRILLERA",
+    "categoria": "Cerdo",
+    "precio": 180,
+    "unidad": "kg",
+    "descripcion": "CARRILLERA DE CERDO PARA BARBECUE",
+    "imagen": "https://drive.google.com/thumbnail?id=1OllKWpy0VKl38FPeT4HvQGhU9LCtUn7a&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CCARN1",
+    "nombre": "CARNITAS",
+    "categoria": "Cerdo",
+    "precio": 300,
+    "unidad": "kg",
+    "descripcion": "CARNITAS DE CERDO SURTIDAS(MACISA, CUERO, COSTILLA)",
+    "imagen": "https://drive.google.com/thumbnail?id=1AJmCxM16IQLObIsc8DL_OhuBxiXqz41G&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CBU1",
+    "nombre": "BUCHE",
+    "categoria": "Cerdo",
+    "precio": 90,
+    "unidad": "kg",
+    "descripcion": "BUCHE DE CERDO CONGELADO",
+    "imagen": "https://drive.google.com/thumbnail?id=1lQTnhWd-G8iMnkePdUPLBImvDsRbwgal&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CCHOG1",
+    "nombre": "CHORIZO A GRANEL",
+    "categoria": "Cerdo",
+    "precio": 90,
+    "unidad": "kg",
+    "descripcion": "CHORIZO DE CERDO 80/20 A GRANEL PARA FREIR",
+    "imagen": "https://drive.google.com/thumbnail?id=1wiinPTMGrKfmCpwRm91gdPLyHpCQ_TAd&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CMANB1",
+    "nombre": "MANTECA BLANCA",
+    "categoria": "Cerdo",
+    "precio": 60,
+    "unidad": "kg",
+    "descripcion": "MANTECA BLANCA DE CERDO",
+    "imagen": "https://drive.google.com/thumbnail?id=1NQR2vEa1RjC7yycGAOItYmtsbk3q-mO0&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CTOCN1",
+    "nombre": "TOCINETA",
+    "categoria": "Cerdo",
+    "precio": 180,
+    "unidad": "kg",
+    "descripcion": "TOCINETA DE CERDO NATURAL REBANADA(CONGELADA PARA SU MEJOR CORTE)",
+    "imagen": "https://drive.google.com/thumbnail?id=1jxwbCoUX3IcWpjrF0VkXD9E9wX-bWx58&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CTOCMA2",
+    "nombre": "TOCINETA MARINADA",
+    "categoria": "Cerdo",
+    "precio": 180,
+    "unidad": "kg",
+    "descripcion": "TOCINETA MARINADA PARA ASAR(PUEDE SER CONGELADA)",
+    "imagen": "https://drive.google.com/thumbnail?id=1jxwbCoUX3IcWpjrF0VkXD9E9wX-bWx58&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CTOCADO3",
+    "nombre": "TOCINETA ADOBADA",
+    "categoria": "Cerdo",
+    "precio": 180,
+    "unidad": "kg",
+    "descripcion": "TOCINETA DE CERDO ADOBADA(PUEDE SER CONGELADA)",
+    "imagen": "https://drive.google.com/thumbnail?id=1jxwbCoUX3IcWpjrF0VkXD9E9wX-bWx58&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CHUEPZ1",
+    "nombre": "HUESO PA POZOLE",
+    "categoria": "Cerdo",
+    "precio": 20,
+    "unidad": "kg",
+    "descripcion": "HUESO DE CERDO PA POZOLE(PUEDE SER CONGELADO SEGÚN EXISTENCIAS)",
+    "imagen": "https://drive.google.com/thumbnail?id=1aqxYYW6HR1L9OzaBirBcjnuK20_FhoFG&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CCHIS1",
+    "nombre": "CHISTORRA",
+    "categoria": "cerdo",
+    "precio": 150,
+    "unidad": "kg",
+    "descripcion": "CHISTORRA DE CERDO Y RES EMPACADA AL VACIO",
+    "imagen": "https://drive.google.com/thumbnail?id=17bEzZyqkjmtQiJGovfdqIM2z1e5QpbDO&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "CCAB1",
+    "nombre": "CABEZA",
+    "categoria": "cerdo",
+    "precio": 30,
+    "unidad": "kg",
+    "descripcion": "CABEZA DE CERDO(PUEDE SER FRESCA O CONGELADA SEGÚN EXISTENCIAS, SE PUEDE PARTIR EN 2 O EN 4 PARTES, SE VENDE MINIMO UNA MITAD)",
+    "imagen": "https://drive.google.com/thumbnail?id=1R5DhQHVuJ-FGDGHsDP1Cjp3i_tGKMN31&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "CCHAM1",
+    "nombre": "CHAMORRO",
+    "categoria": "cerdo",
+    "precio": 70,
+    "unidad": "kg",
+    "descripcion": "CHAMORRO DE CERDO( SE PUEDE VENDER ENTERO O TROZEADO)PUEDE SER FRESCO O CONGELADO SEGÚN EXISTENCIAS",
+    "imagen": "https://drive.google.com/thumbnail?id=1-KRjELrA0R938Me5XZTLPGn4yZbyRfc2&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "CR8020FR1",
+    "nombre": "CARNE PA FREIR 80/20",
+    "categoria": "Cerdo",
+    "precio": 100,
+    "unidad": "kg",
+    "descripcion": "CARNE DE CERDO PA FREIR DE RECORTE 80/20",
+    "imagen": "https://drive.google.com/thumbnail?id=1-ytRF_EKgllmB_Bysye_UC07TQOBZND6&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CCHOAS2",
+    "nombre": "CHORIZO PA ASAR AMARRADO",
+    "categoria": "Cerdo",
+    "precio": 120,
+    "unidad": "kg",
+    "descripcion": "CHORIZO DE CERDO 80/20 PA ASAR",
+    "imagen": "https://drive.google.com/thumbnail?id=1nHqdrl4vwjoxU9UWZvV7Nk9uLs-Dtvvi&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CCHOARG3",
+    "nombre": "CHORIZO ARGENTINO",
+    "categoria": "Cerdo",
+    "precio": 150,
+    "unidad": "kg",
+    "descripcion": "CHORIZO ARGENTINO",
+    "imagen": "https://drive.google.com/thumbnail?id=15-icj3AyeWOHTWE0R2_BwsYD4quZSCHu&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CCHOLON4",
+    "nombre": "LONGANIZA",
+    "categoria": "Cerdo",
+    "precio": 120,
+    "unidad": "kg",
+    "descripcion": "LONGANIZA DE CERDO Y RES 80/20",
+    "imagen": "https://drive.google.com/thumbnail?id=1XpeZp9_talU5aEcMG27B3JTwCtzcTgPp&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "CR8020MOLPT2",
+    "nombre": "MOLIDA PARA TACOS",
+    "categoria": "Cerdo",
+    "precio": 85,
+    "unidad": "kg",
+    "descripcion": "RECORTE 80/20 MOLIDO PARA TACOS CORTE GRUESO",
+    "imagen": "https://drive.google.com/thumbnail?id=1wF_Hvj7G6OhF4F1yx2nblnxzWPuJb6u2&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CLOM1",
+    "nombre": "LOMO",
+    "categoria": "Cerdo",
+    "precio": 140,
+    "unidad": "kg",
+    "descripcion": "LOMO DE CERDO( SE PUEDE VENDER POR CAÑA ENTERA O BISTECEADO Y APLANADO PARA MILANEZAS)",
+    "imagen": "https://drive.google.com/thumbnail?id=1vfs2S0uHGuWJbVDi4hC6Gh_e-R-McCnI&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CPF1",
+    "nombre": "PUNTAS DE FILETE",
+    "categoria": "Cerdo",
+    "precio": 180,
+    "unidad": "kg",
+    "descripcion": "PUNTAS DE FILETE(SE PUEDE VENDER LA PIEZA ENTERA O BISTECEADO Y APLANADO PARA BISTECES)",
+    "imagen": "https://drive.google.com/thumbnail?id=1EXd2ymcJQMzhZWyyW6PdpKDoRkCIgD5a&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "MAR1",
+    "nombre": "MAIZ ROJO",
+    "categoria": "Cerdo",
+    "precio": 55,
+    "unidad": "kg",
+    "descripcion": "MAIZ ROJO EMPACADO AL VACIO PA POZOLE",
+    "imagen": "https://drive.google.com/thumbnail?id=1GUfAa2muQBm1BLR2UIv33ymvoqIQCZmz&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "MAB2",
+    "nombre": "MAIZ BLANCO",
+    "categoria": "Varios",
+    "precio": 35,
+    "unidad": "kg",
+    "descripcion": "MAIZ BLANCO PARA POZLE EMPACADO AL VACIO",
+    "imagen": "https://drive.google.com/thumbnail?id=1U25aF4nh-W2BxwLEoYm37HshtO3VWKFY&sz=w1200",
+    "emoji": "🛒"
+  },
+  {
+    "id": "CCHUES1",
+    "nombre": "CHULETA ESTRELLA",
+    "categoria": "Cerdo",
+    "precio": 150,
+    "unidad": "kg",
+    "descripcion": "CHULETA ESTRELLA PA ASAR( SE VENDE CONGELADA PARA SU MEJOR CORTE)",
+    "imagen": "https://drive.google.com/thumbnail?id=1KFqL_FK7_JE28cbfS_-QBXvvqdSCiT0v&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "CCHOVDE5",
+    "nombre": "CHORIZO VERDE",
+    "categoria": "Cerdo",
+    "precio": 150,
+    "unidad": "kg",
+    "descripcion": "CHORIZO VERDE PA ASAR 80/20",
+    "imagen": "https://drive.google.com/thumbnail?id=1yh3ElyBtoY15AUhJaotSW8IpLkpgEpWT&sz=w1200",
+    "emoji": "🐖"
+  },
+  {
+    "id": "RBA1",
+    "nombre": "RES PARA BARBACOA",
+    "categoria": "Res",
+    "precio": 240,
+    "unidad": "kg",
+    "descripcion": "CARNE DE RES PARA HACER BARBACOA(COSTILLA, DIEZMILLO Y MACIZA)",
+    "imagen": "https://drive.google.com/thumbnail?id=1J_FukjipovzqdGisoyBtyAy_0TIVoZDZ&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RSE1",
+    "nombre": "SESOS",
+    "categoria": "Res",
+    "precio": 140,
+    "unidad": "kg",
+    "descripcion": "SESOS DE RES CONGELADOS",
+    "imagen": "https://drive.google.com/thumbnail?id=1AkZytYJAs6QA2MMgS-kbNOWsLN3RaADj&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RMEPR1",
+    "nombre": "MENUDO PRECOCIDO",
+    "categoria": "Res",
+    "precio": 90,
+    "unidad": "kg",
+    "descripcion": "MENUDO FRESCO PRECOCIDO(PANZA, CAYO, PANAL Y LIBRO)",
+    "imagen": "https://drive.google.com/thumbnail?id=1oXTAYLmoH94AKYAlrzuMDkXSrmzSkXQz&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RTRI1",
+    "nombre": "TRIPAS",
+    "categoria": "Res",
+    "precio": 100,
+    "unidad": "kg",
+    "descripcion": "TRIPAS DE RES PA PACHARELAS(POR LO GENERAL VIENE FRESCO A ALGUNAS ESCEPCIONES)",
+    "imagen": "https://drive.google.com/thumbnail?id=1bw51sTu7b9wT--ExkOM7dQiQ7nHPaX-b&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RBIFA1",
+    "nombre": "FAJITAS DE RES",
+    "categoria": "Res",
+    "precio": 300,
+    "unidad": "kg",
+    "descripcion": "BISTECES DE RES FILETEADOS EN LAMINAS",
+    "imagen": "https://drive.google.com/thumbnail?id=1bJrld-Q8bop79UkZaLYThqC47N8KkSZ5&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RCHMCH1",
+    "nombre": "CHAMBARETE CON HUESO PA COCIDO",
+    "categoria": "Res",
+    "precio": 230,
+    "unidad": "kg",
+    "descripcion": "CHAMBARETE CON HUESO PA COCIDO",
+    "imagen": "https://drive.google.com/thumbnail?id=1E5rEDqH9Qd96h_nXBnhQeqOvZmP8uZ7N&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RCHMSH2",
+    "nombre": "CHAMBARETE SIN HUESO PA COCIDO",
+    "categoria": "Res",
+    "precio": 240,
+    "unidad": "kg",
+    "descripcion": "CHAMBARETE SIN HUESO PA COCIDO",
+    "imagen": "https://drive.google.com/thumbnail?id=1kHEtMp0athg-HaAzoOZbOSpa68xSDr4Q&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RPA1",
+    "nombre": "PATA DE RES PRECOCIDA",
+    "categoria": "Res",
+    "precio": 80,
+    "unidad": "kg",
+    "descripcion": "PATA DE RES PRECOCIDA REBANADA",
+    "imagen": "https://drive.google.com/thumbnail?id=1pKO9QAxpuYyJ9V1q-SMhpTe3cU8eGXuP&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RTUE1",
+    "nombre": "HUESO DE TUETANO",
+    "categoria": "Res",
+    "precio": 80,
+    "unidad": "kg",
+    "descripcion": "HUESO DE TUETANOS REBANADOS A LO LARGO O EN RUEDAS",
+    "imagen": "https://drive.google.com/thumbnail?id=17_uZJda1GzG8kspl8Cm-D4-C9Lw_KgSY&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RFAL1",
+    "nombre": "FALDA PA DESEBRAR",
+    "categoria": "Res",
+    "precio": 300,
+    "unidad": "kg",
+    "descripcion": "FALDA DE RES PARA DESEBRAR",
+    "imagen": "https://drive.google.com/thumbnail?id=1kWW9dWtVvwiGlOOKUrG937L1KpHtlXe2&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RCAB1",
+    "nombre": "CABEZA DE RES",
+    "categoria": "Res",
+    "precio": 80,
+    "unidad": "kg",
+    "descripcion": "CABEZA DE RES (SE VENDE POR MITAN MINIMO)INCLUYE LENGUA Y SESOS",
+    "imagen": "https://drive.google.com/thumbnail?id=1DlUfyHA_UyQMrkZGtRujqk0noYTXGViP&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RARM2",
+    "nombre": "ARRACHERA MARINADA DE RES",
+    "categoria": "Res",
+    "precio": 280,
+    "unidad": "kg",
+    "descripcion": "ARRACHERA MARINADA DE RES PA ASAR",
+    "imagen": "https://drive.google.com/thumbnail?id=1b6sAxP19pbWGxTtE16PVGbx3T_BFVAxJ&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RCHU1",
+    "nombre": "CHULETA DE RES",
+    "categoria": "Res",
+    "precio": 300,
+    "unidad": "kg",
+    "descripcion": "CHULETA DE RES PA ASAR (PUEDE VENIR CONGELADA PARA MEJOR CORTE)",
+    "imagen": "https://drive.google.com/thumbnail?id=1LcY60CFJqgwXGMdGc_8KrhxcdK7JUQg4&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RCOC1",
+    "nombre": "CARNE PA COCIDO",
+    "categoria": "Res",
+    "precio": 240,
+    "unidad": "kg",
+    "descripcion": "CARNE DE RES PA COCIDO (CHAMBARETE, COSTILLA Y MACISA)",
+    "imagen": "https://drive.google.com/thumbnail?id=1wQn54yro0UjKzL9o6Pz-i0H9jSLxthg5&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RSUA1",
+    "nombre": "SUADERO",
+    "categoria": "Res",
+    "precio": 240,
+    "unidad": "kg",
+    "descripcion": "SUDAERO DE RES",
+    "imagen": "https://drive.google.com/thumbnail?id=1zRql8cOUp2UqZYXgL0pTE3obHvX-yZXY&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RMED1",
+    "nombre": "MEDULA",
+    "categoria": "Res",
+    "precio": 120,
+    "unidad": "kg",
+    "descripcion": "MEDULA DE RES CONGELADA",
+    "imagen": "https://drive.google.com/thumbnail?id=1aPT9_qTJ00O8Ry0dXws_GxYgHYjqEnau&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RPIC1",
+    "nombre": "PICAÑA",
+    "categoria": "Res",
+    "precio": 320,
+    "unidad": "kg",
+    "descripcion": "PICAÑA DE RES (CORTE DE 200GR)",
+    "imagen": "https://drive.google.com/thumbnail?id=1dtdd8hHSP4WQiy3noOUU3i4gaZg0wPZ-&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RAGN1",
+    "nombre": "AGUJA NORTEÑA",
+    "categoria": "Res",
+    "precio": 240,
+    "unidad": "kg",
+    "descripcion": "CORTE DE RES AGUJA NORTEÑA PA ASAR",
+    "imagen": "https://drive.google.com/thumbnail?id=1HJFkVavQIzCRRfyWwEK5d2MPHJMuJvHF&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RVIR1",
+    "nombre": "VIRIL PA COCTAIL",
+    "categoria": "Res",
+    "precio": 140,
+    "unidad": "kg",
+    "descripcion": "BOLSA DE VIRIL EN VINAGRE PA HACER COCTAIL",
+    "imagen": "https://drive.google.com/thumbnail?id=1VibjR9kEVfB6hgjCnTTp0GDEBmvVbMk0&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RLENG1",
+    "nombre": "LENGUA",
+    "categoria": "Res",
+    "precio": 350,
+    "unidad": "kg",
+    "descripcion": "LENGUA DE RES PZA CONGELADA",
+    "imagen": "https://drive.google.com/thumbnail?id=1j-_vJWIGrQO1NFB_o5HvXYR5LXjbgcvR&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RRIB1",
+    "nombre": "RIB EYE",
+    "categoria": "Res",
+    "precio": 360,
+    "unidad": "kg",
+    "descripcion": "CORTE DE RES PA ASAR RIB EYE",
+    "imagen": "https://drive.google.com/thumbnail?id=1UiZcDZWrxEnYylwKi2XjoTB7C9yQ9To5&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RNEW1",
+    "nombre": "NEW YORK",
+    "categoria": "Res",
+    "precio": 360,
+    "unidad": "kg",
+    "descripcion": "CORTE DE RES PA ASAR NEW YORK",
+    "imagen": "https://drive.google.com/thumbnail?id=17MdoKtK9G5mcPE91jYnYFPGOnVOJMMor&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RBIS1",
+    "nombre": "BISTEC DE RES",
+    "categoria": "Res",
+    "precio": 300,
+    "unidad": "kg",
+    "descripcion": "PULPA DE RES BISTECEADA Y APLANADA FRESCO",
+    "imagen": "https://drive.google.com/thumbnail?id=1aXcsqnQXLYIpqkk7a_2uUgCDRwbLxIl3&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RMOL1",
+    "nombre": "MOLIDA DE RES",
+    "categoria": "Res",
+    "precio": 260,
+    "unidad": "kg",
+    "descripcion": "CARNE MAGRA DE RES 90/10 MOLIDA, CORTE DELGADO",
+    "imagen": "https://drive.google.com/thumbnail?id=1p2w4zdI6UxaE8dQ3i7A2CNUaZ0T-fNQU&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RHIG1",
+    "nombre": "HIGADO DE RES",
+    "categoria": "Res",
+    "precio": 90,
+    "unidad": "kg",
+    "descripcion": "HIGADO DE RES FRESCO LAMINADO",
+    "imagen": "https://drive.google.com/thumbnail?id=1VlIMq0G6Az0tVuQThU3SJpbrNFJr6L0K&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RCECADB1",
+    "nombre": "CECINA DE RES ADOBADA FRESCA",
+    "categoria": "Res",
+    "precio": 300,
+    "unidad": "kg",
+    "descripcion": "PULPA DE RES BISTECEADA EN LAMINA ADOBADA, LIMON Y SAL",
+    "imagen": "https://drive.google.com/thumbnail?id=1JGQrL0AW9BGWJ4BqANlIP4oXuiNWpoaO&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RCEFRS1",
+    "nombre": "CECINA DE RES FRESCA",
+    "categoria": "Res",
+    "precio": 300,
+    "unidad": "kg",
+    "descripcion": "PULPA DE RES BISTECEADA EN LAMINA FRESCA CON SAL Y LIMON",
+    "imagen": "https://drive.google.com/thumbnail?id=1yi28pkUToOozWv36xuPM4Niw6qhY7Ja3&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RCMOLD1",
+    "nombre": "MOLIDA MIXTA",
+    "categoria": "Res",
+    "precio": 180,
+    "unidad": "kg",
+    "descripcion": "CARNE DE RES Y CERDO 50/50 MOLIDA",
+    "imagen": "https://drive.google.com/thumbnail?id=1egMH5yka6EEJ9ZvDFtSHddFcKLwcizYh&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RPESMOL2",
+    "nombre": "MOLIDA PA JUGO",
+    "categoria": "Res",
+    "precio": 260,
+    "unidad": "kg",
+    "descripcion": "CARNE DE PESCUEZO MOLIDA PARA HACER EN SU JUGO(TARTARA)",
+    "imagen": "https://drive.google.com/thumbnail?id=1p2w4zdI6UxaE8dQ3i7A2CNUaZ0T-fNQU&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "RCESEC3",
+    "nombre": "CECINA DE RES SECA",
+    "categoria": "Res",
+    "precio": 1000,
+    "unidad": "kg",
+    "descripcion": "PULPA DE RES BISTECEADA Y APLANADA SECA CON SAL Y LIMON",
+    "imagen": "https://drive.google.com/thumbnail?id=18kOyic7WfFNBDX5BMbn_MeaDRiWANrDw&sz=w1200",
+    "emoji": "🥩"
+  },
+  {
+    "id": "POPECSH1",
+    "nombre": "PECHUGA SIN HUESO",
+    "categoria": "Pollo",
+    "precio": 200,
+    "unidad": "kg",
+    "descripcion": "PECHUGA SIN HUESO FRESCA",
+    "imagen": "https://drive.google.com/thumbnail?id=17Yr5gcnp1ahe8MVqzjQhIYJZkFqOetr_&sz=w1200",
+    "emoji": "🍗"
+  },
+  {
+    "id": "POPECSHMO2",
+    "nombre": "PECHUGA SIN HUESO MOLIDA",
+    "categoria": "Pollo",
+    "precio": 200,
+    "unidad": "kg",
+    "descripcion": "PECHUGA DE POLLO FRESCA MOLIDA",
+    "imagen": "https://drive.google.com/thumbnail?id=17Yr5gcnp1ahe8MVqzjQhIYJZkFqOetr_&sz=w1200",
+    "emoji": "🍗"
+  },
+  {
+    "id": "PO1",
+    "nombre": "POLLO",
+    "categoria": "Pollo",
+    "precio": 100,
+    "unidad": "kg",
+    "descripcion": "POLLO ENTERO SIN CABEZAS NI MENUDENCIAS PARTIDO(FRESCO)",
+    "imagen": "https://drive.google.com/thumbnail?id=1pCo5ZGZ8nmXPIXTnwcTgPiDQaptryV_N&sz=w1200",
+    "emoji": "🍗"
+  },
+  {
+    "id": "POPYM2",
+    "nombre": "PIERNA Y MUSLO",
+    "categoria": "Pollo",
+    "precio": 80,
+    "unidad": "kg",
+    "descripcion": "PIERNA Y MUSLO DE POLLO FRESCO",
+    "imagen": "https://drive.google.com/thumbnail?id=100JXixRQPBP_jQIXPV4gfJlucZnWg2TI&sz=w1200",
+    "emoji": "🍗"
+  },
+  {
+    "id": "POHUE1",
+    "nombre": "HUEVO FRESCO",
+    "categoria": "Pollo",
+    "precio": 65,
+    "unidad": "kg",
+    "descripcion": "CAJA DE HUEVO FRESCO 12 PZAS",
+    "imagen": "https://drive.google.com/thumbnail?id=1cwS4ldR3rqNvTz3UolsbYMY8iTyJqoki&sz=w1200",
+    "emoji": "🍗"
+  },
+  {
+    "id": "POALHT1",
+    "nombre": "ALITAS HOT WINGS",
+    "categoria": "Pollo",
+    "precio": 120,
+    "unidad": "kg",
+    "descripcion": "ALITAS DE POLLO PICOSITAS HOT WINGS FRESCAS",
+    "imagen": "https://drive.google.com/thumbnail?id=1lzMHT0EzvhgZIs56PfyzzUyvUIsTaxnT&sz=w1200",
+    "emoji": "🍗"
+  },
+  {
+    "id": "POMIL3",
+    "nombre": "MILANESA DE POLLO",
+    "categoria": "Pollo",
+    "precio": 220,
+    "unidad": "kg",
+    "descripcion": "PECHUGA FRESCA BISTECEADA Y APLANADA PA MILANEZAS",
+    "imagen": "https://drive.google.com/thumbnail?id=1EJ9bAZ-oG10LUf5cisdZuuVaxA2sp8HH&sz=w1200",
+    "emoji": "🍗"
+  },
+  {
+    "id": "PESTIL1",
+    "nombre": "FILTE TILAPIA",
+    "categoria": "Pescado",
+    "precio": 140,
+    "unidad": "kg",
+    "descripcion": "FILETE DE PESCADO TILAPIA CONGELADO 90/10",
+    "imagen": "https://drive.google.com/thumbnail?id=1Nlp3-yH1ctTTkhqGSSXHEbZfOemCQCFS&sz=w1200",
+    "emoji": "🐟"
+  },
+  {
+    "id": "QASA1",
+    "nombre": "QUESO ASADERO",
+    "categoria": "Lácteos",
+    "precio": 200,
+    "unidad": "kg",
+    "descripcion": "QUESO ASADERO FRESCO",
+    "imagen": "https://drive.google.com/thumbnail?id=1bjOvR6UXFPPCDVWEbIRacO9_vc3JCaty&sz=w1200",
+    "emoji": "🧀"
+  },
+  {
+    "id": "QRAN1",
+    "nombre": "QUESO RANCHERO",
+    "categoria": "Lácteos",
+    "precio": 200,
+    "unidad": "kg",
+    "descripcion": "QUESO FRESCO RANCHERO",
+    "imagen": "https://drive.google.com/thumbnail?id=1ZKqtj_V4G5mZguZXWSyh4s_6lfhLOen0&sz=w1200",
+    "emoji": "🧀"
+  }
+]

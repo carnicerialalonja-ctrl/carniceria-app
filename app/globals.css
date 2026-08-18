@@ -24,3 +24,516 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top right, rgba(185, 28, 28, 0.18), transparent 32%),
+    #0f0f0f;
+}
+
+button, input, textarea { font: inherit; }
+
+.lonjaHeader {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  margin: -16px -16px 16px;
+  padding: 10px 16px;
+  background: rgba(10, 10, 10, 0.92);
+  border-bottom: 1px solid rgba(250, 204, 21, 0.22);
+  backdrop-filter: blur(14px);
+}
+
+.lonjaHeaderInner {
+  max-width: 1408px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+}
+
+.lonjaLogo {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #facc15;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.42);
+}
+
+.lonjaHeaderText h1 {
+  margin: 2px 0;
+  font-size: clamp(1.35rem, 3vw, 2.15rem);
+  line-height: 1;
+}
+
+.lonjaHeaderText p { margin: 5px 0 0; color: #d4d4d8; }
+
+.lonjaEyebrow {
+  color: #facc15;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.lonjaHeaderWhatsapp,
+.lonjaHeroButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 900;
+  border-radius: 999px;
+}
+
+.lonjaHeaderWhatsapp {
+  min-height: 44px;
+  padding: 0 18px;
+  background: #16a34a;
+}
+
+.lonjaHero {
+  position: relative;
+  min-height: min(64vw, 620px);
+  margin-bottom: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(250, 204, 21, 0.24);
+  border-radius: 28px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.42);
+}
+
+.lonjaHeroImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lonjaHeroShade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.91) 0%, rgba(0, 0, 0, 0.63) 45%, rgba(0, 0, 0, 0.14) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.55), transparent 55%);
+}
+
+.lonjaHeroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  padding: clamp(28px, 6vw, 82px);
+}
+
+.lonjaHeroContent h2 {
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 6vw, 4.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.lonjaHeroContent p {
+  max-width: 570px;
+  color: #f4f4f5;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.55;
+}
+
+.lonjaHeroButton {
+  min-height: 48px;
+  margin-top: 10px;
+  padding: 0 22px;
+  background: #b91c1c;
+}
+
+.lonjaExperience {
+  margin: 18px 0 22px;
+  padding: clamp(20px, 4vw, 34px);
+  background: linear-gradient(135deg, rgba(39, 39, 42, 0.96), rgba(9, 9, 11, 0.98));
+  border: 1px solid rgba(250, 204, 21, 0.2);
+  border-radius: 26px;
+}
+
+.lonjaExperienceHeading { margin-bottom: 20px; }
+
+.lonjaExperienceHeading h2 {
+  margin: 7px 0 8px;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.lonjaExperienceHeading p { margin: 0; color: #d4d4d8; }
+
+.lonjaExperienceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.lonjaExperienceCard {
+  min-height: 190px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px;
+  color: #fff;
+  text-decoration: none;
+  background: #18181b;
+  border: 1px solid #3f3f46;
+  border-radius: 20px;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.lonjaExperienceCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(250, 204, 21, 0.55);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.34);
+}
+
+.lonjaExperienceCard h3 { margin: 0 0 8px; font-size: 1.25rem; }
+.lonjaExperienceCard p { margin: 0 0 18px; color: #d4d4d8; line-height: 1.5; }
+.lonjaExperienceCard strong { color: #facc15; }
+
+.lonjaExperienceIcon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  font-size: 1.9rem;
+  background: #27272a;
+  border-radius: 16px;
+}
+
+.lonjaExperienceCardSoon { opacity: 0.82; cursor: default; }
+.lonjaExperienceCardSoon:hover { transform: none; border-color: #3f3f46; box-shadow: none; }
+
+.lonjaBrandStory {
+  display: grid;
+  grid-template-columns: minmax(220px, 420px) 1fr;
+  align-items: center;
+  gap: clamp(20px, 5vw, 58px);
+  margin-top: 24px;
+  padding: clamp(18px, 4vw, 38px);
+  background: linear-gradient(135deg, #18181b, #09090b);
+  border: 1px solid #3f3f46;
+  border-radius: 24px;
+}
+
+.lonjaBrandImage {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.38);
+}
+
+.lonjaBrandStory h2 {
+  margin: 8px 0 10px;
+  font-size: clamp(1.8rem, 4vw, 3.25rem);
+}
+
+.lonjaBrandStory p { color: #d4d4d8; line-height: 1.6; }
+
+article {
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+article:hover {
+  transform: translateY(-4px);
+  border-color: rgba(250, 204, 21, 0.45) !important;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.34);
+}
+
+article img { transition: transform 260ms ease; }
+article:hover img { transform: scale(1.045); }
+
+.lonjaFloatingCart {
+  position: fixed;
+  z-index: 80;
+  right: 18px;
+  bottom: 18px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 18px;
+  min-width: min(390px, calc(100vw - 32px));
+  padding: 14px 18px;
+  color: #fff;
+  text-align: left;
+  background: #16a34a;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 18px;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.48);
+  cursor: pointer;
+}
+
+.lonjaFloatingCart span:last-child {
+  grid-column: 1 / -1;
+  font-size: 0.78rem;
+  opacity: 0.9;
+}
+
+.lonjaCartBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.lonjaCartDrawer {
+  width: min(520px, 100%);
+  height: 100%;
+  overflow-y: auto;
+  padding: 24px;
+  color: #fff;
+  background: #111113;
+  border-left: 1px solid #3f3f46;
+  box-shadow: -24px 0 60px rgba(0, 0, 0, 0.55);
+}
+
+.lonjaCartDrawerHead,
+.lonjaCartDrawerItem,
+.lonjaCartDrawerTotal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.lonjaCartDrawerHead { margin-bottom: 20px; }
+.lonjaCartDrawerHead span { color: #facc15; font-size: 0.72rem; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+.lonjaCartDrawerHead h2 { margin: 4px 0 0; font-size: 1.75rem; }
+.lonjaCartDrawerHead > button { width: 42px; height: 42px; color: #fff; background: #27272a; border: 1px solid #52525b; border-radius: 50%; font-size: 1.7rem; cursor: pointer; }
+.lonjaCartDrawerItems { display: flex; flex-direction: column; gap: 10px; }
+.lonjaCartDrawerItem { padding: 14px; background: #1c1c1f; border: 1px solid #3f3f46; border-radius: 15px; }
+.lonjaCartDrawerItem > div:first-child { display: flex; flex: 1; flex-direction: column; gap: 3px; min-width: 0; }
+.lonjaCartDrawerItem > div:first-child strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lonjaCartDrawerItem span { color: #a1a1aa; font-size: 0.78rem; }
+.lonjaCartDrawerQuantity { display: flex; align-items: center; gap: 7px; }
+.lonjaCartDrawerQuantity button { width: 32px; height: 32px; color: #fff; background: #3f3f46; border: 0; border-radius: 9px; font-size: 1.1rem; cursor: pointer; }
+.lonjaCartDrawerQuantity b { min-width: 54px; font-size: 0.78rem; text-align: center; }
+.lonjaCartDrawerTotal { margin-top: 18px; padding-top: 18px; border-top: 1px solid #3f3f46; font-size: 1.15rem; }
+.lonjaCartDrawerTotal strong { color: #facc15; font-size: 1.7rem; }
+.lonjaCartContinue,.lonjaCartKeepShopping { width: 100%; min-height: 50px; margin-top: 14px; border-radius: 14px; font-weight: 900; cursor: pointer; }
+.lonjaCartContinue { color: #fff; background: #16a34a; border: 0; font-size: 1rem; }
+.lonjaCartKeepShopping { color: #e4e4e7; background: transparent; border: 1px solid #52525b; }
+.lonjaCartDrawer > small { display: block; margin-top: 12px; color: #a1a1aa; line-height: 1.45; text-align: center; }
+
+.lonjaAddConfirmation {
+  position: fixed;
+  z-index: 8500;
+  left: 50%;
+  bottom: 105px;
+  transform: translateX(-50%);
+  max-width: calc(100vw - 28px);
+  padding: 11px 16px;
+  color: #fff;
+  background: #27272a;
+  border: 1px solid #71717a;
+  border-radius: 999px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.45);
+  font-weight: 800;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .lonjaExperienceGrid { grid-template-columns: 1fr; }
+  .lonjaExperienceCard { min-height: auto; }
+}
+
+@media (max-width: 720px) {
+  .lonjaHeaderInner { grid-template-columns: auto 1fr; }
+  .lonjaLogo { width: 58px; height: 58px; }
+  .lonjaHeaderWhatsapp { display: none; }
+  .lonjaHeaderText p { font-size: 0.82rem; }
+  .lonjaHero { min-height: 520px; }
+
+  .lonjaHeroShade {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.18) 75%);
+  }
+
+  .lonjaHeroContent {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 24px;
+  }
+
+  .lonjaHeroContent h2 { font-size: 2.35rem; }
+  .lonjaBrandStory { grid-template-columns: 1fr; }
+
+  .lonjaFloatingCart {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    min-width: 0;
+  }
+
+  .lonjaFloatingCart span:last-child {
+    display: block;
+  }
+
+  .lonjaCartBackdrop { align-items: flex-end; }
+  .lonjaCartDrawer { width: 100%; height: min(86vh, 760px); padding: 20px 16px; border-top: 1px solid #52525b; border-left: 0; border-radius: 24px 24px 0 0; }
+  .lonjaCartDrawerItem { display: grid; grid-template-columns: 1fr auto; }
+  .lonjaCartDrawerItem > strong { grid-column: 2; grid-row: 1; }
+  .lonjaCartDrawerQuantity { grid-column: 1 / -1; justify-content: flex-end; }
+  .lonjaAddConfirmation { bottom: 102px; font-size: 0.78rem; }
+}
+
+
+.lonjaPromos {
+  margin: 18px 0 24px;
+  padding: clamp(20px, 4vw, 34px);
+  background:
+    radial-gradient(circle at top right, rgba(185, 28, 28, 0.24), transparent 38%),
+    linear-gradient(135deg, #18181b, #09090b);
+  border: 1px solid rgba(248, 113, 113, 0.32);
+  border-radius: 26px;
+}
+
+.lonjaPromosHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.lonjaPromosHeading h2 {
+  margin: 7px 0 8px;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.lonjaPromosHeading p {
+  margin: 0;
+  color: #d4d4d8;
+}
+
+.lonjaPromoBadge {
+  flex: 0 0 auto;
+  padding: 9px 13px;
+  color: #111;
+  background: #facc15;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.lonjaPromosGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.lonjaPromoCard {
+  min-width: 0;
+  padding: 18px;
+  background: rgba(24, 24, 27, 0.94);
+  border: 1px solid #3f3f46;
+  border-radius: 20px;
+}
+
+.lonjaPromoIcon {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+  font-size: 1.7rem;
+  background: #27272a;
+  border-radius: 15px;
+}
+
+.lonjaPromoContent h3 {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+}
+
+.lonjaPromoContent p {
+  min-height: 58px;
+  margin: 0 0 14px;
+  color: #d4d4d8;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.lonjaPromoPrices {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 7px;
+  margin-bottom: 14px;
+}
+
+.lonjaPromoPrices strong {
+  color: #facc15;
+  font-size: 1.7rem;
+}
+
+.lonjaPromoPrices span:last-child {
+  color: #d4d4d8;
+}
+
+.lonjaOldPrice,
+.lonjaCatalogOldPrice {
+  color: #a1a1aa;
+  text-decoration: line-through;
+}
+
+.lonjaCatalogOldPrice {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 0.9rem;
+}
+
+.lonjaPromoButton {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 13px;
+  color: #fff;
+  background: #b91c1c;
+  border: 0;
+  border-radius: 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.lonjaPromoButton:hover {
+  background: #dc2626;
+}
+
+@media (max-width: 1100px) {
+  .lonjaPromosGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .lonjaPromosHeading {
+    display: block;
+  }
+
+  .lonjaPromoBadge {
+    display: inline-block;
+    margin-top: 14px;
+  }
+
+  .lonjaPromosGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .lonjaPromoContent p {
+    min-height: auto;
+  }
+}
