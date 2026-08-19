@@ -24,6 +24,7 @@ type PosOrder = {
 };
 
 type InvoiceRequest = { id: string; status: string };
+type InvoiceUpdateBody = { invoiceRequestId?: unknown; uuid?: unknown; satFolio?: unknown; notes?: unknown };
 
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const RFC_PATTERN = /^[A-ZÑ&]{3,4}\d{6}[A-Z0-9]{3}$/;
@@ -92,5 +93,32 @@ export async function POST(request: Request) {
     }
     console.error("No fue posible guardar la solicitud fiscal.", error);
     return Response.json({ error: "No fue posible guardar los datos fiscales." }, { status: 500 });
+  }
+}
+
+export async function PATCH(request: Request) {
+  const token = (await cookies()).get(ADMIN_COOKIE)?.value;
+  if (!isAdminTokenValid(token)) return Response.json({ error: "Sesión no autorizada." }, { status: 401 });
+
+  try {
+    const body = await request.json() as InvoiceUpdateBody;
+    const invoiceRequestId = String(body.invoiceRequestId || "").trim();
+    const fiscalUuid = String(body.uuid || "").trim().toUpperCase();
+    const satFolio = String(body.satFolio || "").trim().slice(0, 80);
+    const notes = String(body.notes || "").trim().slice(0, 300);
+    if (!UUID_PATTERN.test(invoiceRequestId)) return Response.json({ error: "La solicitud de factura no es válida." }, { status: 400 });
+    if (!UUID_PATTERN.test(fiscalUuid)) return Response.json({ error: "Copia el UUID fiscal completo de 36 caracteres." }, { status: 400 });
+
+    const updated = await supabaseAdminRequest<InvoiceRequest[]>(`invoice_requests?id=eq.${encodeURIComponent(invoiceRequestId)}&status=eq.PENDING_SAT`, {
+      method: "PATCH",
+      headers: { Prefer: "return=representation" },
+      body: JSON.stringify({ status: "INVOICED", fiscal_uuid: fiscalUuid, sat_folio: satFolio || null, admin_notes: notes || null, stamped_at: new Date().toISOString(), updated_at: new Date().toISOString() }),
+    });
+    if (!updated[0]?.id) return Response.json({ error: "Esta solicitud ya fue facturada o dejó de estar pendiente." }, { status: 409 });
+    return Response.json({ invoice: updated[0] });
+  } catch (error) {
+    if (error instanceof Error && (error.message.includes("duplicate key") || error.message.includes("23505"))) return Response.json({ error: "Ese UUID fiscal ya está registrado." }, { status: 409 });
+    console.error("No fue posible marcar la factura.", error);
+    return Response.json({ error: "No fue posible actualizar la factura." }, { status: 500 });
   }
 }
