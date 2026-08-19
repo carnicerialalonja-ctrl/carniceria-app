@@ -84,7 +84,7 @@ export default function ProductsAdmin({ initialProducts, initialMovements }: { i
   return <main className={styles.shell}>
     <header className={styles.header}>
       <div><span>CATÁLOGO CENTRAL</span><h1>Productos</h1><p>Los cambios se reflejan en la tienda, el POS y las etiquetas QR.</p></div>
-      <nav><a href="/admin/admon">← Admon</a><a href="/admin/pos">Abrir POS</a><button onClick={openNew}>＋ Nuevo producto</button></nav>
+      <nav><a href="/admin/admon">← Admon</a><a href="/admin/pos">Abrir POS</a><a href="/admin/proveedores">Proveedores</a><button onClick={openNew}>＋ Nuevo producto</button></nav>
     </header>
     <section className={styles.summary}><article><strong>{products.length}</strong><span>Total</span></article><article><strong>{products.filter((item) => item.is_active).length}</strong><span>Activos</span></article><article className={styles.alertMetric}><strong>{products.filter(isLowStock).length}</strong><span>Existencia baja</span></article><article className={styles.outMetric}><strong>{products.filter((item) => item.track_stock && Number(item.stock_quantity) <= 0).length}</strong><span>Agotados</span></article></section>
     <section className={styles.toolbar}><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Buscar por producto, categoría o código…" /><div>{([['ALL','Todos'],['ACTIVE','Activos'],['INACTIVE','Desactivados']] as const).map(([value,label]) => <button key={value} className={status === value ? styles.activeFilter : ""} onClick={() => setStatus(value)}>{label}</button>)}</div></section>
