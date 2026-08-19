@@ -62,7 +62,7 @@ export async function POST(request: Request) {
       }),
     });
     if (!saved[0]?.id) throw new Error("Supabase no devolvió la venta creada.");
-    return Response.json({ orderReference, change: Number((cashReceived - amount).toFixed(2)) });
+    return Response.json({ orderId: saved[0].id, orderReference, change: Number((cashReceived - amount).toFixed(2)) });
   } catch (error) {
     if (error instanceof Error && error.message === "INVALID_ITEM") return Response.json({ error: "Hay un producto o cantidad no válida." }, { status: 400 });
     if (error instanceof Error && error.message.includes("INSUFFICIENT_STOCK:")) {

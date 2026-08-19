@@ -18,6 +18,10 @@ type Product = {
 
 type CartItem = Product & { quantity: number };
 type PaymentMethod = "CASH" | "CARD";
+type CompletedSale = { orderId: string; orderReference: string; total: number; paymentMethod: PaymentMethod };
+type FiscalForm = { rfc: string; legalName: string; postalCode: string; taxRegime: string; cfdiUse: string; email: string };
+
+const emptyFiscalForm: FiscalForm = { rfc: "", legalName: "", postalCode: "", taxRegime: "", cfdiUse: "G03", email: "" };
 
 const currency = new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN" });
 
@@ -35,6 +39,12 @@ export default function PosTerminal({ products, initialProductId }: { products: 
   const [weightPriceValue, setWeightPriceValue] = useState("");
   const [priceItem, setPriceItem] = useState<CartItem | null>(null);
   const [priceValue, setPriceValue] = useState("");
+  const [completedSale, setCompletedSale] = useState<CompletedSale | null>(null);
+  const [invoiceOpen, setInvoiceOpen] = useState(false);
+  const [fiscalForm, setFiscalForm] = useState<FiscalForm>(emptyFiscalForm);
+  const [invoiceSaving, setInvoiceSaving] = useState(false);
+  const [invoiceMessage, setInvoiceMessage] = useState("");
+  const [invoiceError, setInvoiceError] = useState("");
   const scanRef = useRef<HTMLInputElement>(null);
   const initialProductHandled = useRef(false);
 
@@ -174,9 +184,12 @@ export default function PosTerminal({ products, initialProductId }: { products: 
           items: cart.map((item) => ({ id: item.id, quantity: item.quantity, unitPrice: item.precio })),
         }),
       });
-      const result = await response.json() as { orderReference?: string; change?: number; error?: string };
-      if (!response.ok || !result.orderReference) throw new Error(result.error || "No fue posible registrar la venta.");
+      const result = await response.json() as { orderId?: string; orderReference?: string; change?: number; error?: string };
+      if (!response.ok || !result.orderId || !result.orderReference) throw new Error(result.error || "No fue posible registrar la venta.");
       const saleCart = cart;
+      setCompletedSale({ orderId: result.orderId, orderReference: result.orderReference, total, paymentMethod });
+      setInvoiceMessage("");
+      setInvoiceError("");
       setMessage(`Venta ${result.orderReference} registrada${paymentMethod === "CASH" ? ` · Cambio ${currency.format(result.change || 0)}` : ""}.`);
       setCart([]);
       setReceived("");
@@ -187,6 +200,28 @@ export default function PosTerminal({ products, initialProductId }: { products: 
     } finally {
       setSaving(false);
       window.setTimeout(() => scanRef.current?.focus(), 0);
+    }
+  }
+
+  async function requestInvoice(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (!completedSale) return;
+    setInvoiceSaving(true);
+    setInvoiceError("");
+    setInvoiceMessage("");
+    try {
+      const response = await fetch("/api/admin/pos/invoices", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ orderId: completedSale.orderId, ...fiscalForm }),
+      });
+      const result = await response.json() as { invoiceRequestId?: string; error?: string };
+      if (!response.ok || !result.invoiceRequestId) throw new Error(result.error || "No fue posible guardar la solicitud.");
+      setInvoiceMessage(`Datos fiscales guardados para ${completedSale.orderReference}. Falta conectar el proveedor de timbrado para emitir el CFDI.`);
+    } catch (invoiceRequestError) {
+      setInvoiceError(invoiceRequestError instanceof Error ? invoiceRequestError.message : "No fue posible guardar la solicitud.");
+    } finally {
+      setInvoiceSaving(false);
     }
   }
 
@@ -227,6 +262,7 @@ export default function PosTerminal({ products, initialProductId }: { products: 
         {paymentMethod === "CASH" ? <div className={styles.cash}><label>Efectivo recibido<input type="number" min={total} step="0.01" inputMode="decimal" value={received} onChange={(event) => setReceived(event.target.value)} placeholder="$0.00" /></label><div className={change >= 0 ? styles.change : styles.short}><span>{change >= 0 ? "Cambio" : "Faltan"}</span><strong>{currency.format(Math.abs(change))}</strong></div></div> : <p className={styles.cardNotice}>Cobra {currency.format(total)} en la terminal Clip. Cuando aparezca “Aprobado”, registra la venta.</p>}
         {error && <p className={styles.error}>{error}</p>}
         {message && <p className={styles.success}>{message}</p>}
+        {completedSale && <button className={styles.invoiceButton} type="button" onClick={() => setInvoiceOpen(true)}>🧾 Facturar {completedSale.orderReference}</button>}
         <button className={styles.charge} type="button" disabled={saving || !cart.length} onClick={() => void completeSale()}>{saving ? "Guardando…" : paymentMethod === "CASH" ? `Cobrar ${currency.format(total)}` : `Confirmar tarjeta · ${currency.format(total)}`}</button>
       </aside>
     </section>
@@ -255,6 +291,27 @@ export default function PosTerminal({ products, initialProductId }: { products: 
         <div className={styles.pricePresets}>{[90, 100, 110, 120].map((price) => <button type="button" key={price} onClick={() => setPriceValue(String(price))}>${price}</button>)}</div>
         <div className={styles.weightAmount}><span>Importe con {priceItem.quantity} {priceItem.unidad}</span><strong>{currency.format((Number(priceValue) || 0) * priceItem.quantity)}</strong></div>
         <button type="button" className={styles.weightSave} onClick={savePrice}>Aplicar precio a esta venta</button>
+      </section>
+    </div>}
+    {invoiceOpen && completedSale && <div className={styles.weightBackdrop} role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setInvoiceOpen(false); }}>
+      <section className={`${styles.weightModal} ${styles.invoiceModal}`} role="dialog" aria-modal="true" aria-labelledby="invoice-title">
+        <div className={styles.weightHead}><div><span>FACTURACIÓN CFDI 4.0</span><h2 id="invoice-title">{completedSale.orderReference}</h2><p>{currency.format(completedSale.total)} · {completedSale.paymentMethod === "CASH" ? "Efectivo" : "Tarjeta"}</p></div><button type="button" onClick={() => setInvoiceOpen(false)} aria-label="Cerrar">×</button></div>
+        <form className={styles.fiscalForm} onSubmit={(event) => void requestInvoice(event)}>
+          <div className={styles.fiscalGrid}>
+            <label>RFC<input autoFocus required minLength={12} maxLength={13} value={fiscalForm.rfc} onChange={(event) => setFiscalForm((current) => ({ ...current, rfc: event.target.value.toUpperCase().replace(/\s/g, "") }))} placeholder="XAXX010101000" /></label>
+            <label>Código postal fiscal<input required inputMode="numeric" pattern="[0-9]{5}" maxLength={5} value={fiscalForm.postalCode} onChange={(event) => setFiscalForm((current) => ({ ...current, postalCode: event.target.value.replace(/\D/g, "").slice(0, 5) }))} placeholder="38000" /></label>
+          </div>
+          <label>Nombre o razón social<input required minLength={3} maxLength={200} value={fiscalForm.legalName} onChange={(event) => setFiscalForm((current) => ({ ...current, legalName: event.target.value.toUpperCase() }))} placeholder="Como aparece en la constancia fiscal" /></label>
+          <label>Régimen fiscal<select required value={fiscalForm.taxRegime} onChange={(event) => setFiscalForm((current) => ({ ...current, taxRegime: event.target.value }))}>
+            <option value="">Seleccionar…</option><option value="601">601 · General de Ley Personas Morales</option><option value="603">603 · Personas Morales con Fines no Lucrativos</option><option value="605">605 · Sueldos y Salarios</option><option value="606">606 · Arrendamiento</option><option value="608">608 · Demás ingresos</option><option value="610">610 · Residentes en el Extranjero</option><option value="611">611 · Ingresos por Dividendos</option><option value="612">612 · Actividades Empresariales y Profesionales</option><option value="614">614 · Ingresos por intereses</option><option value="615">615 · Premios</option><option value="616">616 · Sin obligaciones fiscales</option><option value="621">621 · Incorporación Fiscal</option><option value="625">625 · Plataformas Tecnológicas</option><option value="626">626 · Régimen Simplificado de Confianza</option>
+          </select></label>
+          <label>Uso del CFDI<select required value={fiscalForm.cfdiUse} onChange={(event) => setFiscalForm((current) => ({ ...current, cfdiUse: event.target.value }))}><option value="G01">G01 · Adquisición de mercancías</option><option value="G02">G02 · Devoluciones, descuentos o bonificaciones</option><option value="G03">G03 · Gastos en general</option><option value="S01">S01 · Sin efectos fiscales</option><option value="CP01">CP01 · Pagos</option><option value="CN01">CN01 · Nómina</option></select></label>
+          <label>Correo para enviar factura (opcional)<input type="email" maxLength={254} value={fiscalForm.email} onChange={(event) => setFiscalForm((current) => ({ ...current, email: event.target.value }))} placeholder="cliente@correo.com" /></label>
+          <p className={styles.fiscalHint}>Captura los datos exactamente como aparecen en la Constancia de Situación Fiscal.</p>
+          {invoiceError && <p className={styles.error}>{invoiceError}</p>}
+          {invoiceMessage && <p className={styles.success}>{invoiceMessage}</p>}
+          <button type="submit" className={styles.weightSave} disabled={invoiceSaving || Boolean(invoiceMessage)}>{invoiceSaving ? "Guardando…" : invoiceMessage ? "✓ Solicitud guardada" : "Guardar datos para facturar"}</button>
+        </form>
       </section>
     </div>}
   </main>;
