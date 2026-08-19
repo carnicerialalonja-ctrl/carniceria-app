@@ -22,7 +22,8 @@ export type CashMovement = {
   created_at: string;
 };
 
-type PosOrder = { payment_method: string; amount: number | string; fulfillment_status: string; created_at: string };
+type PosOrder = { payment_method: string; amount: number | string; fulfillment_status: string; created_at: string; credit_status: string | null };
+type CreditCashPayment = { amount: number | string };
 
 export type CashRegisterData = {
   openSession: CashSession | null;
@@ -46,16 +47,18 @@ export async function getCashRegisterData(): Promise<CashRegisterData> {
   const openSession = sessions.find((session) => session.status === "OPEN") || null;
   if (!openSession) return { openSession: null, sessions, movements: [], cashSales: 0, cardSales: 0, transferSales: 0, creditSales: 0, cashOperations: 0, cardOperations: 0, transferOperations: 0, creditOperations: 0, moneyIn: 0, moneyOut: 0, expectedCash: 0 };
 
-  const [movements, orders] = await Promise.all([
+  const [movements, orders, creditCashPayments] = await Promise.all([
     supabaseAdminRequest<CashMovement[]>(`cash_movements?select=*&session_id=eq.${openSession.id}&order=created_at.desc`),
-    supabaseAdminRequest<PosOrder[]>(`orders?select=payment_method,amount,fulfillment_status,created_at&order_channel=eq.POS&cash_session_id=eq.${openSession.id}&order=created_at.desc&limit=2000`),
+    supabaseAdminRequest<PosOrder[]>(`orders?select=payment_method,amount,fulfillment_status,created_at,credit_status&order_channel=eq.POS&cash_session_id=eq.${openSession.id}&order=created_at.desc&limit=2000`),
+    supabaseAdminRequest<CreditCashPayment[]>(`credit_payments?select=amount&payment_method=eq.CASH&cash_session_id=eq.${openSession.id}&limit=2000`),
   ]);
   const validOrders = orders.filter((order) => order.fulfillment_status !== "CANCELLED");
   const cashOrders = validOrders.filter((order) => order.payment_method === "CASH_ON_DELIVERY");
   const cardOrders = validOrders.filter((order) => order.payment_method === "CLIP");
   const transferOrders = validOrders.filter((order) => order.payment_method === "TRANSFER");
-  const creditOrders = validOrders.filter((order) => order.payment_method === "CREDIT");
-  const cashSales = sum(cashOrders.map((order) => order.amount));
+  const creditOrders = validOrders.filter((order) => order.payment_method === "CREDIT" && order.credit_status === "PENDING");
+  const creditCashReceived = sum(creditCashPayments.map((payment) => payment.amount));
+  const cashSales = sum(cashOrders.map((order) => order.amount)) + creditCashReceived;
   const cardSales = sum(cardOrders.map((order) => order.amount));
   const transferSales = sum(transferOrders.map((order) => order.amount));
   const creditSales = sum(creditOrders.map((order) => order.amount));
@@ -70,7 +73,7 @@ export async function getCashRegisterData(): Promise<CashRegisterData> {
     cardSales,
     transferSales,
     creditSales,
-    cashOperations: cashOrders.length,
+    cashOperations: cashOrders.length + creditCashPayments.length,
     cardOperations: cardOrders.length,
     transferOperations: transferOrders.length,
     creditOperations: creditOrders.length,
