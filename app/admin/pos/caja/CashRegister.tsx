@@ -51,6 +51,8 @@ export default function CashRegister({ initialData }: { initialData: CashRegiste
         <article><span>FONDO INICIAL</span><strong>{money.format(Number(session.opening_amount))}</strong><small>Al abrir la caja</small></article>
         <article><span>VENTAS EN EFECTIVO</span><strong>{money.format(initialData.cashSales)}</strong><small>{initialData.cashOperations} operaciones</small></article>
         <article><span>VENTAS CON TARJETA</span><strong>{money.format(initialData.cardSales)}</strong><small>{initialData.cardOperations} operaciones</small></article>
+        <article><span>🏦 TRANSFERENCIAS</span><strong>{money.format(initialData.transferSales)}</strong><small>{initialData.transferOperations} operaciones</small></article>
+        <article><span>🕐 POR COBRAR</span><strong>{money.format(initialData.creditSales)}</strong><small>{initialData.creditOperations} créditos pendientes</small></article>
         <article><span>ENTRADAS</span><strong className={styles.positive}>+{money.format(initialData.moneyIn)}</strong><small>Fuera de ventas</small></article>
         <article><span>SALIDAS</span><strong className={styles.negative}>−{money.format(initialData.moneyOut)}</strong><small>Gastos o retiros</small></article>
       </section>

@@ -30,8 +30,12 @@ export type CashRegisterData = {
   movements: CashMovement[];
   cashSales: number;
   cardSales: number;
+  transferSales: number;
+  creditSales: number;
   cashOperations: number;
   cardOperations: number;
+  transferOperations: number;
+  creditOperations: number;
   moneyIn: number;
   moneyOut: number;
   expectedCash: number;
@@ -40,7 +44,7 @@ export type CashRegisterData = {
 export async function getCashRegisterData(): Promise<CashRegisterData> {
   const sessions = await supabaseAdminRequest<CashSession[]>("cash_sessions?select=*&order=opened_at.desc&limit=30");
   const openSession = sessions.find((session) => session.status === "OPEN") || null;
-  if (!openSession) return { openSession: null, sessions, movements: [], cashSales: 0, cardSales: 0, cashOperations: 0, cardOperations: 0, moneyIn: 0, moneyOut: 0, expectedCash: 0 };
+  if (!openSession) return { openSession: null, sessions, movements: [], cashSales: 0, cardSales: 0, transferSales: 0, creditSales: 0, cashOperations: 0, cardOperations: 0, transferOperations: 0, creditOperations: 0, moneyIn: 0, moneyOut: 0, expectedCash: 0 };
 
   const [movements, orders] = await Promise.all([
     supabaseAdminRequest<CashMovement[]>(`cash_movements?select=*&session_id=eq.${openSession.id}&order=created_at.desc`),
@@ -49,8 +53,12 @@ export async function getCashRegisterData(): Promise<CashRegisterData> {
   const validOrders = orders.filter((order) => order.fulfillment_status !== "CANCELLED");
   const cashOrders = validOrders.filter((order) => order.payment_method === "CASH_ON_DELIVERY");
   const cardOrders = validOrders.filter((order) => order.payment_method === "CLIP");
+  const transferOrders = validOrders.filter((order) => order.payment_method === "TRANSFER");
+  const creditOrders = validOrders.filter((order) => order.payment_method === "CREDIT");
   const cashSales = sum(cashOrders.map((order) => order.amount));
   const cardSales = sum(cardOrders.map((order) => order.amount));
+  const transferSales = sum(transferOrders.map((order) => order.amount));
+  const creditSales = sum(creditOrders.map((order) => order.amount));
   const moneyIn = sum(movements.filter((movement) => movement.movement_type === "IN").map((movement) => movement.amount));
   const moneyOut = sum(movements.filter((movement) => movement.movement_type === "OUT").map((movement) => movement.amount));
 
@@ -60,8 +68,12 @@ export async function getCashRegisterData(): Promise<CashRegisterData> {
     movements,
     cashSales,
     cardSales,
+    transferSales,
+    creditSales,
     cashOperations: cashOrders.length,
     cardOperations: cardOrders.length,
+    transferOperations: transferOrders.length,
+    creditOperations: creditOrders.length,
     moneyIn,
     moneyOut,
     expectedCash: round(Number(openSession.opening_amount) + cashSales + moneyIn - moneyOut),

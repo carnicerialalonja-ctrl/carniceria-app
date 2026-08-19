@@ -54,9 +54,10 @@ export async function POST(request: Request) {
 
     const orders = await supabaseAdminRequest<PosOrder[]>(`orders?select=id,order_reference,order_channel,payment_method,amount,currency,items,paid_at&id=eq.${encodeURIComponent(orderId)}&limit=1`);
     const order = orders[0];
-    if (!order || order.order_channel !== "POS" || !order.paid_at) return Response.json({ error: "No encontré una venta POS pagada con ese folio." }, { status: 404 });
+    if (!order || order.order_channel !== "POS") return Response.json({ error: "No encontré una venta POS con ese folio." }, { status: 404 });
 
-    const paymentForm = order.payment_method === "CASH_ON_DELIVERY" ? "01" : order.payment_method === "CLIP" ? "04" : null;
+    const paymentForm = order.payment_method === "CASH_ON_DELIVERY" ? "01" : order.payment_method === "CLIP" ? "04" : order.payment_method === "TRANSFER" ? "03" : order.payment_method === "CREDIT" ? "99" : null;
+    const fiscalPaymentMethod = order.payment_method === "CREDIT" ? "PPD" : "PUE";
     if (!paymentForm) return Response.json({ error: "La forma de pago de esta venta no se puede facturar todavía." }, { status: 409 });
 
     const saved = await supabaseAdminRequest<InvoiceRequest[]>("invoice_requests", {
@@ -72,6 +73,7 @@ export async function POST(request: Request) {
         cfdi_use: cfdiUse,
         email: email || null,
         payment_form: paymentForm,
+        payment_method: fiscalPaymentMethod,
         amount: Number(order.amount),
         currency: order.currency,
         sale_snapshot: {

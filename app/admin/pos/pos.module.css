@@ -48,6 +48,11 @@
 .change{background:#052e16;color:#bbf7d0}
 .short{background:#450a0a;color:#fecaca}
 .cardNotice{margin:14px 18px;padding:13px;border-radius:11px;background:#172554;color:#bfdbfe;line-height:1.45}
+.paymentNotice{margin:9px 0 0;color:#bfdbfe;font-size:12px;line-height:1.4}
+.creditFields{display:grid;grid-template-columns:1fr 120px;gap:10px;margin:14px 18px;padding:13px;border-radius:11px;background:#3b1d08;color:#fef3c7}
+.creditFields label{display:grid;gap:6px;font-size:12px;font-weight:900}
+.creditFields input,.creditFields select{box-sizing:border-box;width:100%;padding:12px;border:1px solid #92400e;border-radius:10px;background:#18181b;color:#fff;font:inherit}
+.creditFields p{grid-column:1/-1;margin:0;font-size:12px;line-height:1.4}
 .error,.success{margin:10px 18px;padding:11px;border-radius:10px;font-size:13px}
 .error{background:#450a0a;color:#fecaca}
 .success{background:#052e16;color:#bbf7d0}
@@ -104,6 +109,8 @@
 .items article{grid-template-columns:1fr auto}
 .items article>b{grid-column:2}
 .total strong{font-size:28px}
+.creditFields{grid-template-columns:1fr}
+.creditFields p{grid-column:auto}
 }
 @media(max-width:620px){
 .quickEditGrid{grid-template-columns:1fr}
