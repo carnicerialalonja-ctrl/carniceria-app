@@ -244,7 +244,7 @@ export default function PosTerminal({ products, initialProductId }: { products: 
   return <main className={styles.shell}>
     <header className={styles.header}>
       <div><span>PUNTO DE VENTA</span><h1>La Lonja</h1><p>Escanea, cobra y registra ventas de mostrador.</p></div>
-      <nav><a href="/admin/admon">← Admon</a><a href="/admin/pos/caja">Abrir/cerrar caja</a><a href="/admin/proveedores">Proveedores</a><a href="/admin/pos/creditos">Cuentas por cobrar</a><a href="/admin/pos/facturas">Facturas pendientes</a><a href="/admin/pos/corte">Corte del día</a><a href="/admin/pos/qr">Imprimir QR</a><a href="/admin/pedidos">Ventas y pedidos</a></nav>
+      <nav><a href="/admin/admon">← Admon</a><a href="/admin/pos/caja">Abrir/cerrar caja</a><a href="/admin/compras">Entrada de mercancía</a><a href="/admin/proveedores">Proveedores</a><a href="/admin/pos/creditos">Cuentas por cobrar</a><a href="/admin/pos/facturas">Facturas pendientes</a><a href="/admin/pos/corte">Corte del día</a><a href="/admin/pos/qr">Imprimir QR</a><a href="/admin/pedidos">Ventas y pedidos</a></nav>
     </header>
 
     <section className={styles.workspace}>

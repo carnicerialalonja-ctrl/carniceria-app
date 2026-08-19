@@ -68,6 +68,7 @@ export default function AdmonDashboard({ initialData }: { initialData: AdmonDash
           <a href="/admin/pos">Abrir punto de venta</a>
           <a href="/admin/productos">Administrar productos</a>
           <a href="/admin/proveedores">Proveedores</a>
+          <a href="/admin/compras">Entrada de mercancía</a>
           <a href="/admin/pedidos">Ver pedidos</a>
           <form action="/admin/logout" method="post"><button type="submit">Salir</button></form>
         </div>

@@ -45,6 +45,7 @@ export default async function SuppliersPage() {
         <nav>
           <a href="/admin/admon">← Admon</a>
           <a href="/admin/pos">Abrir POS</a>
+          <a href="/admin/compras">Entrada de mercancía</a>
           <a href="/admin/productos">Productos</a>
         </nav>
       </header>
